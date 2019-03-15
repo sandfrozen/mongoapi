@@ -5,9 +5,11 @@ import bodyParser from 'body-parser'
 import cors from 'cors'
 
 import schema from './graphql/schema'
+import {connection_string} from './mongodb/mongodb.js'
 
 const PORT = process.env.PORT || '4000'
-const db = 'mongodb+srv://tomek:tomek94@cluster0-bhkqc.gcp.mongodb.net/test?retryWrites=true'
+
+const db = connection_string
 
 //FIXES CORS ERROR
 const whitelist = [
