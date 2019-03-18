@@ -38,10 +38,10 @@ const app = express()
 app.use(
   '/graphql',
   bodyParser.json(),
-  cors(),
+  cors(whitelist),
   graphqlHTTP({
     schema: schema,
-    graphiql: true
+    graphiql: false
   }))
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`))
